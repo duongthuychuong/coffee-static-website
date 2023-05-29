@@ -13,6 +13,9 @@ body {
   background: #222;
   color: white;
   padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 .nav-center {
   width: 90vw;
@@ -23,21 +26,18 @@ body {
   font-size: 2rem;
   font-weight: 700;
 }
-.hero {
-  min-height: calc(100vh - 10vh);
-  background: linear-gradient(
-      to right,
-      rgba(70, 106, 82, 0.5),
-      rgba(133, 84, 46, 0.7)
-    ),
-    url(./hero-bcg.jpg) center/cover no-repeat;
-}
+
 .hero-center {
   max-width: 1170px;
   width: 90vw;
   color: white;
-  margin: 0 auto;
   padding: 5rem 0;
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 .hero-center h1 {
   letter-spacing: 2px;
@@ -45,7 +45,6 @@ body {
   margin-bottom: 0.75rem;
 }
 .hero-center p {
-  max-width: 50vw;
   margin-bottom: 1.5rem;
 }
 .hero-btn {
@@ -57,4 +56,24 @@ body {
   height: 3rem;
   letter-spacing: 0.25rem;
   padding: 1rem;
+}
+.temp {
+  height: 100vh;
+  background: red;
+}
+.hero {
+  background: rgb(133, 84, 46);
+  position: relative;
+  min-height: calc(100vh - 10vh);
+}
+/* If the screen size is 768px wide or less, change the background */
+@media only screen and (min-width: 768px) {
+  .hero {
+    background: linear-gradient(
+        to right,
+        rgba(70, 106, 82, 0.5),
+        rgba(133, 84, 46, 0.7)
+      ),
+      url(./hero-bcg.jpg) center/cover no-repeat;
+  }
 }
