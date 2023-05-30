@@ -47,6 +47,9 @@ body {
 .hero-center p {
   margin-bottom: 1.5rem;
 }
+.hero-text {
+  animation: slideInTopAnimation 3s;
+}
 .hero-btn {
   background: transparent;
   color: white;
@@ -56,6 +59,7 @@ body {
   height: 3rem;
   letter-spacing: 0.25rem;
   padding: 1rem;
+  animation: slideInBottomAnimation 3s;
 }
 .temp {
   height: 100vh;
@@ -66,7 +70,7 @@ body {
   position: relative;
   min-height: calc(100vh - 10vh);
 }
-/* If the screen size is 768px wide or less, change the background */
+/* If the screen size is less than 768px, change the background */
 @media only screen and (min-width: 768px) {
   .hero {
     background: linear-gradient(
@@ -75,5 +79,25 @@ body {
         rgba(133, 84, 46, 0.7)
       ),
       url(./hero-bcg.jpg) center/cover no-repeat;
+  }
+}
+@keyframes slideInBottomAnimation {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes slideInTopAnimation {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
